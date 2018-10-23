@@ -1,21 +1,12 @@
 #!/usr/bin/env python3
 
 import argparse
-from enum import Enum
 
 from print_date.app import app
 
-
-class Date(Enum):
-    now = 'now'
-    tomorrow = 'tomorrow'
-    yesterday = 'yesterday'
-
-    def __str__(self):
-        return self.value
-
-
 def main():
+    ex = app.App;
+
     parser = argparse.ArgumentParser(description='Test executable application print_date')
 
     parser.add_argument('--days', default=0, type=int, help='default = 0. equals now')
@@ -36,8 +27,9 @@ def main():
 
     if 'func' in args:
         args.func()
+
     else:
-        app.offset(args.days)
+        ex.response(args.days)
 
 
 if __name__ == '__main__':

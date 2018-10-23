@@ -1,17 +1,14 @@
-from .utils import date_with_offset
+import datetime
+import dateutils
 
 
+class App:
+    def response(offset=0):
+        print((datetime.datetime.now().date() + dateutils.relativedelta(days=offset)).isoformat())
+ex=App
 def now():
-    print(date_with_offset())
-
-
+    ex.response()
 def tomorrow():
-    print(date_with_offset(1))
-
-
+    ex.response(1)
 def yesterday():
-    print(date_with_offset(-1))
-
-
-def offset(offset):
-    print(date_with_offset(offset))
+    ex.response(-1)
